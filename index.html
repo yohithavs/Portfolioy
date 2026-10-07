@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yohitha V S | Final-year Computer Science Engineering student portfolio showcasing projects, skills, internships, and practical experience."
+    />
+    <meta property="og:title" content="Yohitha V S | Portfolio" />
+    <meta
+      property="og:description"
+      content="Final-year CSE student focused on Python, full-stack development, machine learning, and practical project work."
+    />
+    <meta property="og:type" content="website" />
+    <title>Yohitha V S | Portfolio</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --bg-soft: rgba(15, 22, 34, 0.72);
+        --panel: rgba(12, 18, 28, 0.72);
+        --panel-strong: #0d1727;
+        --card: rgba(18, 25, 36, 0.9);
+        --card-alt: rgba(15, 22, 34, 0.8);
+        --muted: #a5b5c9;
+        --text: #eaf3ff;
+        --text-weak: #c9d9ee;
+        --line: rgba(148, 163, 184, 0.22);
+        --accent: #7dd3fc;
+        --accent-strong: #38bdf8;
+        --green: #6ee7b7;
+        --purple: #c4b5fd;
+        --yellow: #fbbf24;
+        --shadow: 0 20px 50px rgba(3, 8, 20, 0.38);
+        --radius: 22px;
+        --container: 1200px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body.light {
+        --bg: #f3f7fb;
+        --bg-soft: rgba(255, 255, 255, 0.72);
+        --panel: rgba(255, 255, 255, 0.76);
+        --panel-strong: #ffffff;
+        --card: rgba(255, 255, 255, 0.88);
+        --card-alt: rgba(243, 247, 251, 0.95);
+        --muted: #586d88;
+        --text: #172133;
+        --text-weak: #27374d;
+        --line: rgba(15, 23, 42, 0.12);
+        --accent: #0284c7;
+        --accent-strong: #0369a1;
+        --green: #0f9f6e;
+        --purple: #6d5ef7;
+        --yellow: #d97706;
+        --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.14), transparent 20%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        transition: background 0.25s ease, color 0.25s ease;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(125, 211, 252, 0.06);
+        color: var(--accent);
+        letter-spacing: 0.08em;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--green));
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 5vw, 5rem);
+        line-height: 1.05;
+        letter-spacing: -0.055em;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(16px);
+        background: rgba(7, 17, 31, 0.58);
+        border-bottom: 1px solid var(--line);
+      }
+
+      body.light .topbar {
+        background: rgba(243, 247, 251, 0.68);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        max-width: var(--container);
+        width: min(var(--container), calc(100% - 32px));
+        margin: 0 auto;
+        height: 72px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        border: 1px solid rgba(125, 211, 252, 0.45);
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.14), rgba(167, 139, 250, 0.1));
+        color: var(--accent);
+        box-shadow: inset 0 0 12px rgba(125, 211, 252, 0.18);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .nav-links a {
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--green));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--text);
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        transform: scaleX(1);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .icon-button,
+      .primary-button,
+      .secondary-button,
+      .ghost-button,
+      .chip,
+      .project-filter button,
+      .tab-button,
+      .contact-submit {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--text);
+        border-radius: 999px;
+        cursor: pointer;
+        transition: 0.2s ease;
+      }
+
+      .icon-button {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        font-size: 1rem;
+      }
+
+      .primary-button,
+      .secondary-button,
+      .ghost-button,
+      .contact-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0.9rem 1.3rem;
+        font-weight: 700;
+      }
+
+      .primary-button {
+        background: linear-gradient(135deg, var(--accent), var(--green));
+        border: none;
+        color: #04131d;
+        box-shadow: 0 16px 32px rgba(56, 189, 248, 0.22);
+      }
+
+      .secondary-button,
+      .ghost-button,
+      .contact-submit {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .primary-button:hover,
+      .secondary-button:hover,
+      .ghost-button:hover,
+      .icon-button:hover,
+      .chip:hover,
+      .project-filter button:hover,
+      .tab-button:hover,
+      .contact-submit:hover {
+        transform: translateY(-1px);
+        border-color: rgba(125, 211, 252, 0.42);
+      }
+
+      .scroll-progress {
+        position: fixed;
+        inset: 0 0 auto 0;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent), var(--green));
+        z-index: 60;
+      }
+
+      .hero {
+        min-height: calc(100vh - 72px);
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 42px;
+        align-items: center;
+        padding-top: 38px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-copy > * + * {
+        margin-top: 22px;
+      }
+
+      .subtitle {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .hero-summary {
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .social-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-top: 8px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.65rem 0.9rem;
+        color: var(--text-weak);
+      }
+
+      .chip .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.15);
+      }
+
+      .status-shell {
+        position: relative;
+        min-height: 460px;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+      }
+
+      .status-card {
+        position: relative;
+        width: min(100%, 440px);
+        padding: 22px;
+        border-radius: var(--radius);
+        background: linear-gradient(180deg, rgba(15, 22, 34, 0.9), rgba(12, 18, 28, 0.64));
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      body.light .status-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 245, 251, 0.85));
+      }
+
+      .status-card::before {
+        content: "";
+        position: absolute;
+        inset: -35% -10% auto auto;
+        width: 240px;
+        height: 240px;
+        background: radial-gradient(circle, rgba(125, 211, 252, 0.25), transparent 60%);
+      }
+
+      .status-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .status-pill {
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-weak);
+        border: 1px solid var(--line);
+        padding: 8px 10px;
+        border-radius: 999px;
+      }
+
+      .live-dot {
+        width: 10px;
+        height: 10px;
+        background: var(--green);
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 0 6px rgba(110, 231, 183, 0.15);
+      }
+
+      .status-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 12px;
+      }
+
+      .status-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: rgba(148, 163, 184, 0.06);
+        border: 1px solid var(--line);
+      }
+
+      .status-item strong {
+        display: block;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .status-item span {
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .ascii-panel {
+        margin-top: 16px;
+        padding: 16px 18px;
+        border-radius: 18px;
+        background: rgba(10, 17, 28, 0.85);
+        border: 1px solid var(--line);
+        font-family: "Consolas", monospace;
+        color: var(--green);
+        line-height: 1.8;
+        position: relative;
+        z-index: 1;
+      }
+
+      body.light .ascii-panel {
+        background: rgba(255,255,255,0.82);
+      }
+
+      .terminal-line {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        background-size: 32px 32px;
+        mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+        z-index: 0;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 26px;
+      }
+
+      .section-sub {
+        color: var(--muted);
+        max-width: 680px;
+      }
+
+      .info-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .tab-button {
+        padding: 0.72rem 1rem;
+        font-weight: 600;
+      }
+
+      .tab-button.active {
+        background: rgba(125, 211, 252, 0.12);
+        border-color: rgba(125, 211, 252, 0.38);
+        color: var(--accent);
+      }
+
+      .info-panel {
+        position: relative;
+        border-radius: var(--radius);
+        border: 1px solid var(--line);
+        background: var(--panel);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow);
+        min-height: 260px;
+        padding: 26px;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .content-grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .mini-card {
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+        border-radius: 16px;
+        padding: 16px 18px;
+      }
+
+      .mini-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+      }
+
+      .mini-card p,
+      .mini-card li,
+      .detail-list {
+        color: var(--muted);
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: 24px;
+        padding-left: 20px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, rgba(125, 211, 252, 0.6), rgba(110, 231, 183, 0.4), rgba(125, 211, 252, 0.2));
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 28px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--green));
+        border: 4px solid var(--bg);
+        box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.22);
+      }
+
+      .timeline-item .tag {
+        color: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+
+      .timeline-item h3 {
+        margin-top: 8px;
+        font-size: clamp(1.2rem, 2vw, 1.65rem);
+      }
+
+      .timeline-item .meta {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .timeline-item .score {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(110, 231, 183, 0.08);
+        color: var(--green);
+        border: 1px solid rgba(110, 231, 183, 0.22);
+      }
+
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .stack-group {
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--card);
+        box-shadow: var(--shadow);
+        padding: 18px;
+      }
+
+      .stack-group h3 {
+        font-size: 1rem;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .stack-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-pill {
+        padding: 0.7rem 0.9rem;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--text-weak);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .skill-pill:hover,
+      .skill-pill.active {
+        background: rgba(125, 211, 252, 0.12);
+        border-color: rgba(125, 211, 252, 0.42);
+        color: var(--accent);
+      }
+
+      .stack-detail {
+        margin-top: 18px;
+        padding: 20px 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(148, 163, 184, 0.04);
+      }
+
+      .stack-detail h4 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+      }
+
+      .stack-detail .detail-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 12px 0 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .stack-detail .detail-list li::before {
+        content: "•";
+        color: var(--accent);
+        margin-right: 10px;
+      }
+
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 24px 0 20px;
+      }
+
+      .project-filter button {
+        padding: 0.7rem 1rem;
+        font-weight: 600;
+      }
+
+      .project-filter button.active {
+        background: rgba(125, 211, 252, 0.12);
+        border-color: rgba(125, 211, 252, 0.38);
+        color: var(--accent);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .project-card {
+        position: relative;
+        padding: 22px;
+        border-radius: 24px;
+        background: linear-gradient(180deg, rgba(15, 22, 34, 0.78), rgba(12, 18, 28, 0.92));
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        cursor: pointer;
+        overflow: hidden;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      body.light .project-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(243,247,251,0.88));
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(125, 211, 252, 0.42);
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--green));
+      }
+
+      .project-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .project-index {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .project-type {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(125, 211, 252, 0.08);
+        border: 1px solid rgba(125, 211, 252, 0.18);
+        color: var(--accent);
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .project-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
+      }
+
+      .project-card p {
+        color: var(--muted);
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .project-tag {
+        font-size: 0.72rem;
+        padding: 7px 9px;
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.06);
+        border: 1px solid var(--line);
+        color: var(--text-weak);
+      }
+
+      .project-card .read-more {
+        margin-top: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .project-modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        place-items: center;
+        padding: 24px;
+        background: rgba(2, 6, 23, 0.72);
+        backdrop-filter: blur(8px);
+        z-index: 80;
+      }
+
+      .project-modal.open {
+        display: grid;
+      }
+
+      .modal-panel {
+        width: min(980px, 100%);
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 28px;
+        background: var(--panel-strong);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .modal-inner {
+        padding: 28px;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .modal-close {
+        border: 1px solid var(--line);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--text);
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      .modal-steps {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .step-box {
+        padding: 16px 14px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(148, 163, 184, 0.04);
+      }
+
+      .step-box .num {
+        font-size: 0.74rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .step-box h4 {
+        margin-top: 8px;
+        font-size: 1rem;
+      }
+
+      .proof-wrap {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .proof-skills {
+        display: grid;
+        gap: 12px;
+      }
+
+      .proof-skill {
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .proof-skill.active {
+        background: rgba(125, 211, 252, 0.12);
+        border-color: rgba(125, 211, 252, 0.42);
+        color: var(--accent);
+      }
+
+      .proof-map {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .map-node {
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: var(--card);
+      }
+
+      .map-node h4 {
+        margin-bottom: 10px;
+      }
+
+      .project-link-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .project-row {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 10px;
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--text-weak);
+      }
+
+      .project-row.is-highlighted {
+        background: rgba(125, 211, 252, 0.12);
+        border-color: rgba(125, 211, 252, 0.42);
+        color: var(--accent);
+      }
+
+      .problem-steps {
+        display: grid;
+        gap: 12px;
+      }
+
+      .problem-card {
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+      }
+
+      .problem-card summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+      }
+
+      .problem-card summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .problem-card[open] {
+        border-color: rgba(125, 211, 252, 0.28);
+      }
+
+      .problem-card .detail-body {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .mini-stat {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(148, 163, 184, 0.04);
+      }
+
+      .mini-stat .kicker {
+        color: var(--muted);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .mini-stat strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.8rem;
+      }
+
+      .experience-grid,
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .experience-card,
+      .cert-card,
+      .career-card,
+      .resume-panel,
+      .faq-card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .experience-card {
+        padding: 22px;
+      }
+
+      .experience-card .role {
+        font-size: 1.25rem;
+        margin: 8px 0;
+      }
+
+      .experience-card ul,
+      .cert-card ul,
+      .career-card ul {
+        margin: 14px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .cert-card,
+      .career-card {
+        padding: 20px;
+      }
+
+      .career-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .career-card {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .career-card.active {
+        border-color: rgba(125, 211, 252, 0.42);
+        background: rgba(125, 211, 252, 0.06);
+      }
+
+      .career-meta {
+        padding: 18px;
+        margin-top: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+      }
+
+      .resume-panel {
+        padding: 24px;
+      }
+
+      .resume-preview {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+        background: rgba(148, 163, 184, 0.04);
+        min-height: 220px;
+      }
+
+      .resume-preview h3 {
+        margin-bottom: 10px;
+      }
+
+      .resume-preview ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 20px;
+      }
+
+      .contact-card,
+      .form-card {
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card {
+        padding: 22px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .contact-item {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(148, 163, 184, 0.04);
+      }
+
+      .form-card {
+        padding: 24px;
+      }
+
+      .field-group {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .field-group label {
+        font-weight: 600;
+        color: var(--text-weak);
+      }
+
+      .field-group input,
+      .field-group textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--text);
+        padding: 0.9rem 1rem;
+      }
+
+      .field-group textarea {
+        resize: vertical;
+        min-height: 140px;
+      }
+
+      .error-message {
+        color: #fca5a5;
+        font-size: 0.85rem;
+        min-height: 1.1em;
+      }
+
+      .assistant-fab {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 70;
+      }
+
+      .ask-button {
+        border: none;
+        background: linear-gradient(135deg, var(--accent), var(--green));
+        color: #04131d;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        box-shadow: 0 16px 32px rgba(56, 189, 248, 0.22);
+        cursor: pointer;
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      .chat-window {
+        position: absolute;
+        right: 0;
+        bottom: 84px;
+        width: min(360px, calc(100vw - 32px));
+        border: 1px solid var(--line);
+        background: var(--panel-strong);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: none;
+      }
+
+      .chat-window.open {
+        display: block;
+      }
+
+      .chat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .chat-body {
+        padding: 16px;
+        display: grid;
+        gap: 12px;
+        max-height: 300px;
+        overflow: auto;
+      }
+
+      .chat-bubble {
+        max-width: 85%;
+        padding: 10px 12px;
+        border-radius: 14px;
+        line-height: 1.5;
+      }
+
+      .chat-bubble.user {
+        justify-self: end;
+        background: rgba(125, 211, 252, 0.1);
+        border: 1px solid rgba(125, 211, 252, 0.28);
+      }
+
+      .chat-bubble.bot {
+        background: rgba(148, 163, 184, 0.04);
+        border: 1px solid var(--line);
+      }
+
+      .chat-quick {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0 16px 12px;
+      }
+
+      .quick-pill {
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--text-weak);
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+
+      .chat-input {
+        padding: 12px 16px 16px;
+        border-top: 1px solid var(--line);
+      }
+
+      .chat-input-row {
+        display: flex;
+        gap: 8px;
+      }
+
+      .chat-input-row input {
+        flex: 1;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(148, 163, 184, 0.04);
+        color: var(--text);
+        padding: 0.8rem 0.9rem;
+      }
+
+      .chat-input-row button {
+        border: none;
+        background: linear-gradient(135deg, var(--accent), var(--green));
+        color: #04131d;
+        border-radius: 999px;
+        padding: 0.8rem 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: 24px;
+        bottom: 100px;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: var(--panel-strong);
+        color: var(--text);
+        cursor: pointer;
+        display: none;
+        place-items: center;
+        z-index: 65;
+      }
+
+      .back-to-top.visible {
+        display: grid;
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .two-col,
+        .proof-wrap,
+        .contact-grid,
+        .stack-grid,
+        .project-grid,
+        .career-grid,
+        .experience-grid,
+        .cert-grid,
+        .detail-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero {
+          padding-top: 20px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .section {
+          padding: 64px 0;
+        }
+
+        .cta-row,
+        .social-row,
+        .filter-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .primary-button,
+        .secondary-button,
+        .ghost-button {
+          width: 100%;
+        }
+
+        .modal-steps {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="topbar" id="top">
+      <div class="topbar-inner">
+        <a href="#home" class="brand" aria-label="Go to top">
+          <span class="brand-mark">Y</span>
+          <span>Yohitha V S</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#journey">Journey</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme">☀️</button>
+          <a class="secondary-button" href="resume.html" target="_blank" rel="noreferrer">View Resume</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Final-Year CSE Student</div>
+            <h1>YOHITHA V S</h1>
+            <div class="subtitle">Building practical web and ML solutions with a strong foundation in software development.</div>
+            <p class="hero-summary">
+              Computer Science Engineering student (CGPA 8.9/10) with hands-on experience in Python, full stack web development, Django, REST APIs, HTML, CSS, JavaScript, and MySQL. Focused on building responsive applications, debugging real-world issues, and improving software quality through academic projects and internships.
+            </p>
+
+            <div class="cta-row">
+              <a class="primary-button" href="#projects">View Projects</a>
+              <a class="secondary-button" href="resume.txt" download="Yohitha_VS_Resume.txt">Download Resume</a>
+            </div>
+
+            <div class="social-row" aria-label="Social profiles">
+              <a class="chip" href="https://www.linkedin.com/in/yohitha-v-s-0150ba341/" target="_blank" rel="noreferrer"><span class="dot"></span> LinkedIn</a>
+              <a class="chip" href="mailto:vsyohitha@gmail.com"><span class="dot"></span> Email</a>
+            </div>
+          </div>
+
+          <div class="status-shell" aria-label="Current status panel">
+            <div class="bg-grid" aria-hidden="true"></div>
+            <div class="status-card">
+              <div class="status-header">
+                <span class="status-pill">Currently</span>
+                <span class="live-dot" aria-hidden="true"></span>
+              </div>
+
+              <div class="status-grid">
+                <div class="status-item">
+                  <div>
+                    <strong>Stage</strong>
+                    <span>Final-Year CSE Student</span>
+                  </div>
+                </div>
+                <div class="status-item">
+                  <div>
+                    <strong>Focus</strong>
+                    <span>Building Practical Projects</span>
+                  </div>
+                </div>
+                <div class="status-item">
+                  <div>
+                    <strong>Goal</strong>
+                    <span>Open to Opportunities</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ascii-panel" aria-label="Developer status">
+                <div class="terminal-line">&gt; learning = Python + Full Stack</div>
+                <div class="terminal-line">&gt; building = Web Apps + ML</div>
+                <div class="terminal-line">&gt; practicing = Debugging + APIs</div>
+                <div class="terminal-line">&gt; ready = internship + project work</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Who I Am</div>
+              <h2>Practical learner, builder, and developer.</h2>
+            </div>
+          </div>
+
+          <div class="info-tabs" role="tablist" aria-label="About sections">
+            <button class="tab-button active" type="button" data-tab="education">Education</button>
+            <button class="tab-button" type="button" data-tab="skills">Technical Skills</button>
+            <button class="tab-button" type="button" data-tab="projects">Projects</button>
+            <button class="tab-button" type="button" data-tab="experience">Experience</button>
+            <button class="tab-button" type="button" data-tab="learning">Learning</button>
+            <button class="tab-button" type="button" data-tab="interests">Career Interests</button>
+          </div>
+
+          <div class="info-panel">
+            <div class="tab-content active" data-tab-content="education">
+              <div class="content-grid">
+                <div class="mini-card">
+                  <h3>B.E. Computer Science and Engineering</h3>
+                  <p>NPR College of Engineering and Technology</p>
+                  <p class="muted">2023–2027</p>
+                </div>
+                <div class="mini-card">
+                  <h3>Academic Performance</h3>
+                  <p>CGPA: 8.9/10</p>
+                  <p class="muted">Focused on software engineering, database systems, operating systems, and web technologies.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" data-tab-content="skills">
+              <div class="content-grid">
+                <div class="mini-card">
+                  <h3>Core Technologies</h3>
+                  <p>Python, JavaScript, SQL, HTML, CSS, React.js, Node.js, Django, REST APIs, MySQL, Git, GitHub, VS Code, Jupyter Notebook, XAMPP.</p>
+                </div>
+                <div class="mini-card">
+                  <h3>Data & ML</h3>
+                  <p>Excel, Power BI, Pandas, NumPy, Data Cleaning, EDA, Data Visualization, Statistics, Scikit-learn, NLP, TF-IDF, Classification.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" data-tab-content="projects">
+              <div class="content-grid">
+                <div class="mini-card">
+                  <h3>Fake Content Detection</h3>
+                  <p>NLP-based fake news classifier using preprocessing, TF-IDF, and machine learning.</p>
+                </div>
+                <div class="mini-card">
+                  <h3>Online Food Delivery App</h3>
+                  <p>Full-stack ordering platform with authentication, CRUD operations, and database integration.</p>
+                </div>
+                <div class="mini-card">
+                  <h3>Automatic Timetable Generator</h3>
+                  <p>Automation focused on minimizing scheduling conflicts and reducing manual effort.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" data-tab-content="experience">
+              <div class="content-grid">
+                <div class="mini-card">
+                  <h3>Astrabyte Technologies</h3>
+                  <p>Full Stack Development Intern | Jun 2025 – Jul 2025</p>
+                  <p class="muted">Built responsive web applications and integrated REST APIs with MySQL while using Agile practices.</p>
+                </div>
+                <div class="mini-card">
+                  <h3>Ayantrix Solutions</h3>
+                  <p>Full Stack Development Intern | Jun 2026 – Jul 2026</p>
+                  <p class="muted">Connected React frontend with backend APIs and MySQL, implemented CRUD operations, and improved application performance.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" data-tab-content="learning">
+              <div class="content-grid">
+                <div class="mini-card">
+                  <h3>Current learning journey</h3>
+                  <p>Improving practical understanding of Python, full stack application development, REST APIs, data analysis, and machine learning concepts.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" data-tab-content="interests">
+              <div class="content-grid">
+                <div class="mini-card">
+                  <h3>Career direction</h3>
+                  <p>Software development, full stack engineering, data analysis, and AI/ML-oriented problem solving.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="journey">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Journey</div>
+              <h2>Education timeline</h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tag">Current stage</div>
+              <h3>B.E. Computer Science and Engineering</h3>
+              <div class="meta">NPR College of Engineering and Technology • 2023–2027</div>
+              <div class="score">CGPA: 8.9/10</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="tag">Foundation</div>
+              <h3>Core learning in software engineering</h3>
+              <div class="meta">Focused on OOP, DBMS, Operating Systems, Computer Networks, SDLC, Agile, and Software Testing.</div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="tag">Applied learning</div>
+              <h3>Practical project and internship exposure</h3>
+              <div class="meta">Built and deployed small-scale solutions using Python, React.js, Node.js, REST APIs, and MySQL.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Tech Stack</div>
+              <h2>Tools and technologies I have used.</h2>
+            </div>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-group">
+              <h3>Programming</h3>
+              <div class="stack-list">
+                <button class="skill-pill active" type="button" data-skill="Python">Python</button>
+                <button class="skill-pill" type="button" data-skill="JavaScript">JavaScript</button>
+                <button class="skill-pill" type="button" data-skill="SQL">SQL</button>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <h3>Frontend</h3>
+              <div class="stack-list">
+                <button class="skill-pill" type="button" data-skill="HTML">HTML</button>
+                <button class="skill-pill" type="button" data-skill="CSS">CSS</button>
+                <button class="skill-pill" type="button" data-skill="React.js">React.js</button>
+                <button class="skill-pill" type="button" data-skill="JavaScript">JavaScript</button>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <h3>Backend</h3>
+              <div class="stack-list">
+                <button class="skill-pill" type="button" data-skill="Django">Django</button>
+                <button class="skill-pill" type="button" data-skill="Node.js">Node.js</button>
+                <button class="skill-pill" type="button" data-skill="REST APIs">REST APIs</button>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <h3>Database</h3>
+              <div class="stack-list">
+                <button class="skill-pill" type="button" data-skill="MySQL">MySQL</button>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <h3>Data / ML</h3>
+              <div class="stack-list">
+                <button class="skill-pill" type="button" data-skill="Power BI">Power BI</button>
+                <button class="skill-pill" type="button" data-skill="Pandas">Pandas</button>
+                <button class="skill-pill" type="button" data-skill="NumPy">NumPy</button>
+                <button class="skill-pill" type="button" data-skill="Scikit-learn">Scikit-learn</button>
+                <button class="skill-pill" type="button" data-skill="NLP">NLP</button>
+                <button class="skill-pill" type="button" data-skill="TF-IDF">TF-IDF</button>
+              </div>
+            </div>
+
+            <div class="stack-group">
+              <h3>Tools</h3>
+              <div class="stack-list">
+                <button class="skill-pill" type="button" data-skill="Git">Git</button>
+                <button class="skill-pill" type="button" data-skill="GitHub">GitHub</button>
+                <button class="skill-pill" type="button" data-skill="VS Code">VS Code</button>
+                <button class="skill-pill" type="button" data-skill="Jupyter Notebook">Jupyter Notebook</button>
+                <button class="skill-pill" type="button" data-skill="XAMPP">XAMPP</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-detail" id="skillDetail" aria-live="polite">
+            <h4>Python</h4>
+            <ul class="detail-list">
+              <li>Used in the Fake Content Detection project for preprocessing, classification, and model evaluation.</li>
+              <li>Used in the Automatic Timetable Generator project to automate scheduling and reduce manual effort.</li>
+              <li>Supported by practical application with model evaluation using Accuracy, Precision, Recall, and F1-score.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Projects</div>
+              <h2>Proof of practical problem solving.</h2>
+            </div>
+          </div>
+
+          <div class="project-filter filter-row" aria-label="Project filters">
+            <button type="button" class="active" data-filter="all">All</button>
+            <button type="button" data-filter="web">Web</button>
+            <button type="button" data-filter="python">Python</button>
+            <button type="button" data-filter="ai">AI/ML</button>
+            <button type="button" data-filter="database">Database</button>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-category="ai web database" data-project="fake">
+              <div class="project-top">
+                <span class="project-index">01</span>
+                <span class="project-type">AI/ML</span>
+              </div>
+              <h3>Fake Content Detection</h3>
+              <p>Built an NLP-based fake news classifier using preprocessing, TF-IDF, and machine learning.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Scikit-learn</span>
+              </div>
+              <span class="read-more">Open project →</span>
+            </article>
+
+            <article class="project-card" data-category="web database" data-project="food">
+              <div class="project-top">
+                <span class="project-index">02</span>
+                <span class="project-type">Web</span>
+              </div>
+              <h3>Online Food Delivery Application</h3>
+              <p>Developed a full-stack food ordering platform with authentication, CRUD operations, and database integration.</p>
+              <div class="project-tags">
+                <span class="project-tag">React.js</span>
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+              <span class="read-more">Open project →</span>
+            </article>
+
+            <article class="project-card" data-category="python" data-project="timetable">
+              <div class="project-top">
+                <span class="project-index">03</span>
+                <span class="project-type">Automation</span>
+              </div>
+              <h3>Automatic Timetable Generator</h3>
+              <p>Automated timetable scheduling to reduce conflicts and manual effort.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+              </div>
+              <span class="read-more">Open project →</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-modal" id="projectModal" aria-modal="true" role="dialog">
+        <div class="modal-panel">
+          <div class="modal-inner">
+            <div class="modal-header">
+              <div>
+                <div class="eyebrow">Project Detail</div>
+                <h2 id="modalTitle">Project</h2>
+              </div>
+              <button class="modal-close" type="button" aria-label="Close modal" id="closeModal">×</button>
+            </div>
+
+            <div class="modal-steps">
+              <div class="step-box">
+                <div class="num">01</div>
+                <h4>Problem</h4>
+              </div>
+              <div class="step-box">
+                <div class="num">02</div>
+                <h4>Approach</h4>
+              </div>
+              <div class="step-box">
+                <div class="num">03</div>
+                <h4>Technology</h4>
+              </div>
+              <div class="step-box">
+                <div class="num">04</div>
+                <h4>Implementation</h4>
+              </div>
+              <div class="step-box">
+                <div class="num">05</div>
+                <h4>Outcome</h4>
+              </div>
+            </div>
+
+            <div class="content-grid" style="margin-top: 24px;">
+              <div class="mini-card">
+                <h3 id="modalProblem">Problem</h3>
+              </div>
+              <div class="mini-card">
+                <h3 id="modalApproach">Approach</h3>
+              </div>
+              <div class="mini-card">
+                <h3 id="modalTechnology">Technology</h3>
+              </div>
+              <div class="mini-card">
+                <h3 id="modalImplementation">Implementation</h3>
+              </div>
+              <div class="mini-card">
+                <h3 id="modalOutcome">Outcome</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" id="proof">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Proof of Practice</div>
+              <h2>Skills connected to actual work.</h2>
+            </div>
+          </div>
+
+          <div class="proof-wrap">
+            <div class="proof-skills">
+              <button class="proof-skill active" type="button" data-skill="Python">Python</button>
+              <button class="proof-skill" type="button" data-skill="Django">Django</button>
+              <button class="proof-skill" type="button" data-skill="MySQL">MySQL</button>
+              <button class="proof-skill" type="button" data-skill="React.js">React.js</button>
+              <button class="proof-skill" type="button" data-skill="NLP">NLP</button>
+              <button class="proof-skill" type="button" data-skill="REST APIs">REST APIs</button>
+            </div>
+
+            <div class="proof-map" id="proofMap">
+              <div class="map-node" data-project="fake">
+                <h4>Fake Content Detection</h4>
+                <div class="project-link-list">
+                  <span class="project-row is-highlighted">Python</span>
+                  <span class="project-row">NLP</span>
+                  <span class="project-row">Scikit-learn</span>
+                </div>
+              </div>
+              <div class="map-node" data-project="food">
+                <h4>Online Food Delivery Application</h4>
+                <div class="project-link-list">
+                  <span class="project-row is-highlighted">React.js</span>
+                  <span class="project-row">MySQL</span>
+                  <span class="project-row">REST APIs</span>
+                </div>
+              </div>
+              <div class="map-node" data-project="timetable">
+                <h4>Automatic Timetable Generator</h4>
+                <div class="project-link-list">
+                  <span class="project-row is-highlighted">Python</span>
+                </div>
+              </div>
+              <div class="map-node">
+                <h4>Internship work</h4>
+                <div class="project-link-list">
+                  <span class="project-row is-highlighted">Django</span>
+                  <span class="project-row">REST APIs</span>
+                  <span class="project-row">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solutions">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">I Build to Solve Problems</div>
+              <h2>Problem → idea → implementation.</h2>
+            </div>
+          </div>
+
+          <div class="problem-steps">
+            <details class="problem-card" open>
+              <summary>
+                <span>Fake Content Detection</span>
+                <span>Problem → Solution</span>
+              </summary>
+              <div class="detail-body">
+                <div class="detail-grid">
+                  <div class="mini-stat">
+                    <span class="kicker">Problem</span>
+                    <strong>Misleading information</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="kicker">Idea</span>
+                    <strong>NLP + ML classification</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="kicker">Technology</span>
+                    <strong>Python, NLP, TF-IDF</strong>
+                  </div>
+                </div>
+                <p style="margin-top: 16px;">The solution uses preprocessing, TF-IDF, and machine learning to classify fake content. It was evaluated using Accuracy, Precision, Recall, and F1-score.</p>
+              </div>
+            </details>
+
+            <details class="problem-card">
+              <summary>
+                <span>Online Food Delivery Application</span>
+                <span>Problem → Solution</span>
+              </summary>
+              <div class="detail-body">
+                <div class="detail-grid">
+                  <div class="mini-stat">
+                    <span class="kicker">Problem</span>
+                    <strong>Need for a digital ordering flow</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="kicker">Idea</span>
+                    <strong>Full-stack ordering platform</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="kicker">Technology</span>
+                    <strong>React.js, Node.js, MySQL</strong>
+                  </div>
+                </div>
+                <p style="margin-top: 16px;">The project includes authentication, CRUD operations, and database integration to support a functional food ordering experience.</p>
+              </div>
+            </details>
+
+            <details class="problem-card">
+              <summary>
+                <span>Automatic Timetable Generator</span>
+                <span>Problem → Solution</span>
+              </summary>
+              <div class="detail-body">
+                <div class="detail-grid">
+                  <div class="mini-stat">
+                    <span class="kicker">Problem</span>
+                    <strong>Scheduling conflicts</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="kicker">Idea</span>
+                    <strong>Automation with reduced manual effort</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="kicker">Technology</span>
+                    <strong>Python</strong>
+                  </div>
+                </div>
+                <p style="margin-top: 16px;">The project was designed to automate timetable creation and reduce conflicts in scheduling.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Practical Experience</div>
+              <h2>Internships with hands-on software work.</h2>
+            </div>
+          </div>
+
+          <div class="experience-grid">
+            <article class="experience-card">
+              <div class="eyebrow" style="display: inline-flex;">Internship</div>
+              <h3 class="role">Full Stack Development Intern</h3>
+              <p class="muted">Astrabyte Technologies • Jun 2025 – Jul 2025</p>
+              <ul>
+                <li>Developed responsive web applications and integrated REST APIs with MySQL.</li>
+                <li>Performed debugging, testing, and deployment using Agile practices.</li>
+              </ul>
+            </article>
+
+            <article class="experience-card">
+              <div class="eyebrow" style="display: inline-flex;">Internship</div>
+              <h3 class="role">Full Stack Development Intern</h3>
+              <p class="muted">Ayantrix Solutions • Jun 2026 – Jul 2026</p>
+              <ul>
+                <li>Connected React frontend with backend APIs and MySQL.</li>
+                <li>Implemented CRUD operations, optimized SQL queries, and improved application performance.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="certifications">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Certifications</div>
+              <h2>Recognized learning milestones.</h2>
+            </div>
+          </div>
+
+          <div class="cert-grid">
+            <article class="cert-card">
+              <h3>Infosys – SQL</h3>
+              <p class="muted">Relevant technology: SQL</p>
+            </article>
+            <article class="cert-card">
+              <h3>Infosys – Data Analyst</h3>
+              <p class="muted">Relevant topic: Data Analysis</p>
+            </article>
+            <article class="cert-card">
+              <h3>Great Learning – Python</h3>
+              <p class="muted">Relevant technology: Python</p>
+            </article>
+            <article class="cert-card">
+              <h3>Infosys – Mobile App Development</h3>
+              <p class="muted">Relevant topic: Mobile App Development</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="careers">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Where I’m Heading</div>
+              <h2>Career directions supported by my work.</h2>
+            </div>
+          </div>
+
+          <div class="career-grid">
+            <article class="career-card active" data-career="fullstack">
+              <div class="eyebrow" style="display: inline-flex;">Direction</div>
+              <h3>Full Stack</h3>
+              <ul>
+                <li>React.js, Node.js, MySQL, REST APIs</li>
+                <li>Internship experience with frontend and backend integration</li>
+              </ul>
+            </article>
+
+            <article class="career-card" data-career="data">
+              <div class="eyebrow" style="display: inline-flex;">Direction</div>
+              <h3>Data / Analytics</h3>
+              <ul>
+                <li>Power BI, Excel, Pandas, NumPy</li>
+                <li>Data cleaning, EDA, and visualization</li>
+              </ul>
+            </article>
+
+            <article class="career-card" data-career="ai">
+              <div class="eyebrow" style="display: inline-flex;">Direction</div>
+              <h3>AI / ML</h3>
+              <ul>
+                <li>Scikit-learn, NLP, TF-IDF, Classification</li>
+                <li>Fake Content Detection project</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="career-meta">
+            <h3 id="careerTitle">Full Stack</h3>
+            <p id="careerText">Relevant skills include React.js, Node.js, MySQL, REST APIs, and Django. The internship work and full-stack project experience demonstrate practical web application development.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="resume">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Resume</div>
+              <h2>Professional snapshot.</h2>
+            </div>
+          </div>
+
+          <div class="resume-panel">
+            <div class="resume-preview">
+              <h3>Yohitha V S</h3>
+              <p class="muted">Final-year Computer Science Engineering student • CGPA 8.9/10</p>
+              <ul>
+                <li>Python, JavaScript, SQL, HTML, CSS, React.js, Node.js, Django, REST APIs, MySQL</li>
+                <li>Two internship experiences in full stack development</li>
+                <li>Projects in fake content detection, food delivery, and timetable automation</li>
+                <li>Contact: vsyohitha@gmail.com | +91 8610881155</li>
+              </ul>
+            </div>
+
+            <div class="cta-row" style="margin-top: 20px;">
+              <a class="primary-button" href="resume.html" target="_blank" rel="noreferrer">View Resume</a>
+              <a class="secondary-button" href="resume.txt" download="Yohitha_VS_Resume.txt">Download Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Let’s Connect</div>
+              <h2>Reach out for opportunities.</h2>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3>Contact details</h3>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <strong>Email</strong>
+                  <p><a href="mailto:vsyohitha@gmail.com">vsyohitha@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                  <strong>Phone</strong>
+                  <p>+91 8610881155</p>
+                </div>
+                <div class="contact-item">
+                  <strong>LinkedIn</strong>
+                  <p><a href="https://www.linkedin.com/in/yohitha-v-s-0150ba341/" target="_blank" rel="noreferrer">linkedin.com/in/yohitha-v-s-0150ba341/</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-card">
+              <form id="contactForm" novalidate>
+                <div class="field-group">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" required />
+                  <div class="error-message" id="nameError"></div>
+                </div>
+
+                <div class="field-group">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" required />
+                  <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="field-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                  <div class="error-message" id="messageError"></div>
+                </div>
+
+                <button class="contact-submit" type="submit">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="assistant-fab">
+      <div class="chat-window" id="chatWindow" aria-live="polite">
+        <div class="chat-header">
+          <strong>Ask My Portfolio</strong>
+          <button class="modal-close" id="closeChat" type="button" aria-label="Close chat">×</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="chat-bubble bot">I can answer questions based only on Yohitha’s resume and portfolio.</div>
+        </div>
+        <div class="chat-quick">
+          <button class="quick-pill" type="button">What projects has she built?</button>
+          <button class="quick-pill" type="button">What technologies does she know?</button>
+          <button class="quick-pill" type="button">What internship experience?</button>
+        </div>
+        <div class="chat-input">
+          <div class="chat-input-row">
+            <input id="chatInput" type="text" placeholder="Ask a question..." aria-label="Ask my portfolio" />
+            <button type="button" id="sendChat">Send</button>
+          </div>
+        </div>
+      </div>
+      <button class="ask-button" type="button" id="openChat" aria-label="Ask My Portfolio">?</button>
+    </div>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+
+    <script>
+      const body = document.body;
+      const themeToggle = document.getElementById('themeToggle');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      body.classList.toggle('light', !prefersDark);
+      themeToggle.textContent = prefersDark ? '☀️' : '🌙';
+
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light');
+        themeToggle.textContent = body.classList.contains('light') ? '🌙' : '☀️';
+      });
+
+      const progressBar = document.querySelector('.scroll-progress');
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / h) * 100;
+        progressBar.style.width = `${Math.min(progress, 100)}%`;
+        backToTop.classList.toggle('visible', window.scrollY > 280);
+      });
+
+      backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabPanels = document.querySelectorAll('[data-tab-content]');
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+          tabPanels.forEach((panel) => panel.classList.toggle('active', panel.dataset.tabContent === button.dataset.tab));
+        });
+      });
+
+      const skillDetail = document.getElementById('skillDetail');
+      const skillPills = document.querySelectorAll('.skill-pill');
+      const skillMap = {
+        Python: ['Used in the Fake Content Detection project for preprocessing, classification, and model evaluation.', 'Used in the Automatic Timetable Generator project to automate scheduling and reduce manual effort.', 'Strongly aligned with practical ML and scripting work throughout the resume.'],
+        JavaScript: ['Used in frontend development and web application work.', 'Applied in interactive and dynamic frontend implementation.', 'Included in the technical stack for web application building.'],
+        SQL: ['Used in database-backed application development and MySQL integration.', 'Relevant to CRUD operations and optimized SQL queries in internships.', 'Part of the core stack for data and application work.'],
+        HTML: ['Used for responsive interface creation in web projects.', 'Supports frontend structure and layout in a full-stack context.', 'Included in the web development skill set.'],
+        CSS: ['Used for styling and responsive UI design.', 'Applied in building clean and user-friendly interfaces.', 'Part of the frontend foundation.'],
+        'React.js': ['Connected to the online food delivery project and internship frontend work.', 'Used to build interactive user interfaces and connect with backend APIs.', 'Applied in practical full-stack development.'],
+        'Node.js': ['Used in the online food delivery application backend.', 'Supported server-side functionality and application logic.', 'Relevant to the full-stack project stack.'],
+        Django: ['Referenced in the tech stack and ties into backend web development.', 'Used as a practical backend framework in the resume context.', 'Connected to full stack and API-based development.'],
+        'REST APIs': ['Integrated with MySQL in internship work and web applications.', 'Used to connect frontend and backend systems.', 'Important for the practical delivery of full-stack applications.'],
+        MySQL: ['Used in internship work and the online food delivery project.', 'Supported database integration and optimized SQL query work.', 'A core database technology in the resume.'],
+        'Power BI': ['Listed under data skills and analytics tools.', 'Used for data visualization and analysis work.', 'Part of the resume’s data capability set.'],
+        Pandas: ['Used in data analysis and manipulation tasks.', 'Part of the resume’s analytical toolchain.', 'Relevant to EDA and data processing work.'],
+        NumPy: ['Included as a numerical computing skill.', 'Relevant to data and analysis workflows.', 'Connected to the broader Data/ML stack.'],
+        'Scikit-learn': ['Used in Fake Content Detection model creation and evaluation.', 'Critical to the machine learning implementation.', 'Applied with TF-IDF and classification.'],
+        NLP: ['Used in the fake content detection project.', 'Applied for text preprocessing and classification.', 'Directly connects to the ML project.'],
+        'TF-IDF': ['Used in the Fake Content Detection project with machine learning.', 'Supports text-based feature extraction.', 'Practical ML implementation.'],
+        Git: ['Used for version control in software projects.', 'Supports the software development lifecycle workflow.', 'Mentioned as a practical tool in the resume.'],
+        GitHub: ['Used as a project and code-sharing platform.', 'Included as a version control tool in the resume.', 'Part of the practical software workflow.'],
+        'VS Code': ['Used as the coding environment for development work.', 'Part of the toolchain in web and Python projects.', 'Relevant to project implementation.'],
+        'Jupyter Notebook': ['Used for Python-based experimentation and analysis.', 'Relevant to data work and machine learning exploration.', 'Included in the tool list.'],
+        XAMPP: ['Included in the toolset for development support.', 'Useful for local web/database environments.', 'Connected to the stack used for application testing.']
+      };
+
+      skillPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          skillPills.forEach((item) => item.classList.toggle('active', item === pill));
+          const text = skillMap[pill.dataset.skill] || ['Used in practical project work based on the resume.'];
+          skillDetail.innerHTML = `
+            <h4>${pill.dataset.skill}</h4>
+            <ul class="detail-list">
+              ${text.map((line) => `<li>${line}</li>`).join('')}
+            </ul>
+          `;
+        });
+      });
+
+      const projectData = {
+        fake: {
+          title: 'Fake Content Detection',
+          problem: 'The project addresses the challenge of identifying misleading or fake information using a machine learning-based approach.',
+          approach: 'A preprocessing and TF-IDF workflow was used, followed by a classification model to evaluate text content and identify fake news patterns.',
+          technology: 'Python, NLP, Scikit-learn, TF-IDF',
+          implementation: 'The solution includes text preprocessing, feature extraction, model training, and evaluation using Accuracy, Precision, Recall, and F1-score.',
+          outcome: 'Academic / practical project demonstrating implementation of machine learning for fake content detection.'
+        },
+        food: {
+          title: 'Online Food Delivery Application',
+          problem: 'The project addresses the need for a digital food ordering platform with core application functionality and database support.',
+          approach: 'A full-stack architecture was built to connect the frontend, backend, and database through authentication and CRUD operations.',
+          technology: 'React.js, Node.js, MySQL',
+          implementation: 'The system includes authentication, database integration, and CRUD operations to support a complete food ordering workflow.',
+          outcome: 'Academic / practical project demonstrating implementation of a full-stack application with database-backed functionality.'
+        },
+        timetable: {
+          title: 'Automatic Timetable Generator',
+          problem: 'The project addresses scheduling conflicts and the manual effort involved in timetable creation.',
+          approach: 'Automation was used to reduce conflicts and streamline timetable generation.',
+          technology: 'Python',
+          implementation: 'The project focuses on generating timetables automatically to minimize manual effort and scheduling conflicts.',
+          outcome: 'Academic / practical project demonstrating implementation of automated timetable generation.'
+        }
+      };
+
+      const modal = document.getElementById('projectModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalProblem = document.getElementById('modalProblem');
+      const modalApproach = document.getElementById('modalApproach');
+      const modalTechnology = document.getElementById('modalTechnology');
+      const modalImplementation = document.getElementById('modalImplementation');
+      const modalOutcome = document.getElementById('modalOutcome');
+      const closeModal = document.getElementById('closeModal');
+
+      document.querySelectorAll('.project-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          const key = card.dataset.project;
+          const item = projectData[key];
+          modalTitle.textContent = item.title;
+          modalProblem.textContent = item.problem;
+          modalApproach.textContent = item.approach;
+          modalTechnology.textContent = item.technology;
+          modalImplementation.textContent = item.implementation;
+          modalOutcome.textContent = item.outcome;
+          modal.classList.add('open');
+        });
+      });
+
+      closeModal.addEventListener('click', () => modal.classList.remove('open'));
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) modal.classList.remove('open');
+      });
+
+      document.querySelectorAll('.project-filter button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          document.querySelectorAll('.project-filter button').forEach((btn) => btn.classList.toggle('active', btn === button));
+          document.querySelectorAll('.project-card').forEach((card) => {
+            const category = card.dataset.category;
+            const show = filter === 'all' || category.includes(filter);
+            card.style.display = show ? 'block' : 'none';
+          });
+        });
+      });
+
+      const proofButtons = document.querySelectorAll('.proof-skill');
+      const mapNodes = document.querySelectorAll('.map-node');
+      proofButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          proofButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+          const skill = button.dataset.skill;
+          mapNodes.forEach((node) => {
+            const rowItems = node.querySelectorAll('.project-row');
+            rowItems.forEach((item) => {
+              item.classList.toggle('is-highlighted', item.textContent.trim() === skill || item.textContent.trim() === 'Python' && skill === 'Python');
+            });
+          });
+        });
+      });
+
+      const careerData = {
+        fullstack: {
+          title: 'Full Stack',
+          text: 'Relevant skills include React.js, Node.js, MySQL, REST APIs, and Django. The internship work and full-stack project experience demonstrate practical web application development.'
+        },
+        data: {
+          title: 'Data / Analytics',
+          text: 'Relevant skills include Power BI, Excel, Pandas, NumPy, data cleaning, EDA, and visualization. These align with practical data analysis work and strong reporting capabilities.'
+        },
+        ai: {
+          title: 'AI / ML',
+          text: 'Relevant skills include Scikit-learn, NLP, TF-IDF, and classification. The Fake Content Detection project is a direct example of applied machine learning work.'
+        }
+      };
+
+      document.querySelectorAll('.career-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.career-card').forEach((item) => item.classList.toggle('active', item === card));
+          const key = card.dataset.career;
+          const info = careerData[key];
+          document.getElementById('careerTitle').textContent = info.title;
+          document.getElementById('careerText').textContent = info.text;
+        });
+      });
+
+      const contactForm = document.getElementById('contactForm');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const messageError = document.getElementById('messageError');
+
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let valid = true;
+
+        if (nameInput.value.trim().length < 2) {
+          nameError.textContent = 'Please enter your name.';
+          valid = false;
+        } else {
+          nameError.textContent = '';
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+          emailError.textContent = 'Please enter a valid email address.';
+          valid = false;
+        } else {
+          emailError.textContent = '';
+        }
+
+        if (messageInput.value.trim().length < 10) {
+          messageError.textContent = 'Please enter a message with at least 10 characters.';
+          valid = false;
+        } else {
+          messageError.textContent = '';
+        }
+
+        if (valid) {
+          alert('Thanks for reaching out. This is a demo form for the portfolio interface.');
+          contactForm.reset();
+        }
+      });
+
+      const chatWindow = document.getElementById('chatWindow');
+      const openChat = document.getElementById('openChat');
+      const closeChat = document.getElementById('closeChat');
+      const sendChat = document.getElementById('sendChat');
+      const chatInput = document.getElementById('chatInput');
+      const chatBody = document.getElementById('chatBody');
+
+      const faqAnswers = {
+        "what projects has she built": 'Yohitha has built Fake Content Detection, an Online Food Delivery Application, and an Automatic Timetable Generator project.',
+        "what technologies does she know": 'Her resume lists Python, JavaScript, SQL, HTML, CSS, React.js, Node.js, Django, REST APIs, MySQL, Git, GitHub, VS Code, Jupyter Notebook, Excel, Power BI, Pandas, NumPy, Scikit-learn, NLP, and TF-IDF.',
+        "tell me about the strongest project": 'The strongest project in the resume is Fake Content Detection, which uses NLP, TF-IDF, and machine learning to classify fake news and evaluates the model with Accuracy, Precision, Recall, and F1-score.',
+        "what internship experience does she have": 'Yohitha completed full stack development internships at Astrabyte Technologies and Ayantrix Solutions, focusing on responsive web apps, REST APIs, MySQL, debugging, CRUD operations, and performance improvements.',
+        "what is she currently learning": 'The resume indicates she is improving practical understanding of Python, full stack application development, REST APIs, data analysis, and machine learning concepts.',
+        "how can i contact her": 'You can contact Yohitha at vsyohitha@gmail.com or via LinkedIn: https://www.linkedin.com/in/yohitha-v-s-0150ba341/'
+      };
+
+      function addChatBubble(text, type) {
+        const bubble = document.createElement('div');
+        bubble.className = `chat-bubble ${type}`;
+        bubble.textContent = text;
+        chatBody.appendChild(bubble);
+        chatBody.scrollTop = chatBody.scrollHeight;
+      }
+
+      function answerQuestion(question) {
+        const normalized = String(question || '')
+          .toLowerCase()
+          .replace(/[?.,!]/g, '')
+          .replace(/\s+/g, ' ')
+          .trim();
+
+        const key = normalized;
+        const directAnswer = faqAnswers[key];
+        const fallbackAnswer = Object.keys(faqAnswers).find((entry) => entry.includes(key) || key.includes(entry));
+
+        if (!key || (!directAnswer && !fallbackAnswer)) {
+          const reply = 'I can answer based only on Yohitha’s resume and portfolio, including her projects, technical skills, internships, and contact details.';
+          addChatBubble(reply, 'bot');
+          return;
+        }
+
+        addChatBubble(faqAnswers[directAnswer ? key : fallbackAnswer], 'bot');
+      }
+
+      openChat.addEventListener('click', () => {
+        chatWindow.classList.toggle('open');
+      });
+
+      closeChat.addEventListener('click', () => {
+        chatWindow.classList.remove('open');
+      });
+
+      sendChat.addEventListener('click', () => {
+        const value = chatInput.value.trim();
+        if (!value) return;
+        addChatBubble(value, 'user');
+        answerQuestion(value);
+        chatInput.value = '';
+      });
+
+      chatInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          sendChat.click();
+        }
+      });
+
+      document.querySelectorAll('.quick-pill').forEach((pill) => {
+        pill.addEventListener('click', () => {
+          const text = pill.textContent;
+          addChatBubble(text, 'user');
+          answerQuestion(text);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+YOHITHA V S
+Dindigul, Tamil Nadu | +91 8610881155 | vsyohitha@gmail.com
+LinkedIn: https://www.linkedin.com/in/yohitha-v-s-0150ba341/
+
+PROFESSIONAL SUMMARY
+Computer Science Engineering student (CGPA 8.9/10) with hands-on experience in Python and full stack web development, including Django and REST APIs for backend development, and HTML, CSS, and JavaScript for building responsive frontend interfaces. Skilled in database management with MySQL, implementing authentication, and using Git and GitHub for version control. Experienced in debugging, troubleshooting, and building scalable web applications through academic projects and internships, with a strong foundation in the software development lifecycle.
+
+TECHNICAL SKILLS
+Languages: Python, JavaScript, SQL
+Data: Excel, Power BI, Pandas, NumPy, Data Cleaning, EDA, Data Visualization, Statistics
+ML: Scikit-learn, NLP, TF-IDF, Classification
+Web: HTML, CSS, React.js, Node.js, Django, REST APIs
+Database: MySQL
+Tools: Git, GitHub, VS Code, Jupyter Notebook, XAMPP
+Concepts: OOP, DBMS, Operating Systems, Computer Networks, SDLC, Agile, Software Testing
+
+EDUCATION
+B.E. Computer Science and Engineering (2023–2027)
+NPR College of Engineering and Technology
+CGPA: 8.9/10
+
+INTERNSHIP EXPERIENCE
+Full Stack Development Intern | Astrabyte Technologies | Jun 2025 – Jul 2025
+• Developed responsive web applications and integrated REST APIs with MySQL.
+• Performed debugging, testing and deployment using Agile practices.
+
+Full Stack Development Intern | Ayantrix Solutions | Jun 2026 – Jul 2026
+• Connected React frontend with backend APIs and MySQL.
+• Implemented CRUD operations, optimized SQL queries and improved application performance.
+
+PROJECTS
+Fake Content Detection | Python, NLP, Scikit-learn, TF-IDF
+• Built an NLP-based fake news classifier using preprocessing, TF-IDF and machine learning; evaluated with Accuracy, Precision, Recall and F1-score.
+
+Online Food Delivery Application | React.js, Node.js, MySQL
+• Developed a full-stack food ordering platform with authentication, CRUD operations and database integration.
+
+Automatic Timetable Generator | Python
+• Automated timetable scheduling to reduce conflicts and manual effort.
+
+CERTIFICATIONS
+Infosys – SQL | Infosys – Data Analyst | Great Learning – Python | Infosys – Mobile App Development
+
+KEYWORDS
+Python • SQL • Data Analysis • Power BI • Excel • Machine Learning • NLP • REST API • React.js • Node.js • Django • MySQL • Git • Software Testing • SDLC • Agile
+
+LANGUAGES
+Tamil (Native) | English (Professional)
